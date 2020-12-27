@@ -1,0 +1,21 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+{{% block submit_buttons_bottom %}
+    <div class="submit-row">
+
+        {% comment %} 
+            <input type="submit" value="{% trans 'Save' %}" class="default" name="_save" {{ onclick_attrib }}/>
+            {% if show_delete_link %}
+                {% url opts|admin_urlname:'delete' original.pk|admin_urlquote as delete_url %}
+                <p class="deletelink-box"><a href="{% add_preserved_filters delete_url %}" class="deletelink">{% trans "Delete" %}</a></p>
+            {% endif %}
+            <input type="submit" value="{% trans 'Save as new' %}" name="_saveasnew" {{ onclick_attrib }}/> 
+            <input type="button" value="{% trans 'Print' %}" name="_print" onclick="location.href='{% url 'generatepdf' %}"/>
+        {% endcomment %}
+
+        <input type="submit" value="{% trans 'Save and add another' %}" name="_addanother" {{ onclick_attrib }}/>
+        <input type="submit" value="{% trans 'Save' %}" name="_continue" {{ onclick_attrib }}/>
+        {% if original %} <a target="popup" onclick="window.open('{% url 'receipt' original.pk%}','name','width=800,height=600')"><input type="button" value="{% trans 'Print' %}" name="_print"/></a> {% endif %}
+   
+    </div>
+{% endblock %}

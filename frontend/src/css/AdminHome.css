@@ -1,0 +1,13 @@
+.admin-home-div{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 80%;
+    margin-top: 260px;
+}
+
+.admin-home-btn{
+    width: 100%;
+    height: 180px;
+    font-size: xx-large;
+    font-weight: bold;
+}

@@ -1,0 +1,113 @@
+<html>
+   <head>
+      <meta http-equiv=Content-Type content="text/html; charset=unicode">
+      <style>
+         @page WordSection1
+         {size:204.3pt 566.9pt;
+         margin:0cm 0cm 0cm 0cm;}
+      </style>
+   </head>
+   <body lang=EN-IN style='word-wrap:break-word'>
+      <div class=WordSection1>
+         <p style='text-align:center'>
+            <b>
+            <span style='font-size:10.0pt'>AK&#39;S THE VEGBOX</span>
+            </b>
+            <br/>
+            <b><span style='font-size:5.5pt'>Ground floor, Indira Heights, Gangapur Naka, Nashik<br/>Phone Number : 9307438677</span></b>
+         </p>
+         <table>
+            <tr>
+               <td>
+                  <p style='text-align:left'><span lang=EN-US style='font-size:6.5pt'>Bill No.:</span></p>
+               </td>
+               <td>
+                  <p><span lang=EN-US style='font-size:6.5pt'>{{receipt_id}}</span></p>
+               </td>
+            </tr>
+            <tr>
+               <td >
+                  <p style='text-align:left'><span lang=EN-US style='font-size:6.5pt'>Timestamp:</span></p>
+               </td>
+               <td>
+                  <p><span lang=EN-US style='font-size:6.5pt'>{{date_time}}</span></p>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <p style='text-align:left'><span lang=EN-US style='font-size:6.5pt'>Name:</span></p>
+               </td>
+               <td>
+                  <p><span lang=EN-US style='font-size:6.5pt'>{{customer_name}}</span></p>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <p style='text-align:left'><span lang=EN-US style='font-size:6.5pt'>Phone No.:</span></p>
+               </td>
+               <td>
+                  <p><span lang=EN-US style='font-size:6.5pt'>{{customer_phone}}</span></p>
+               </td>
+            </tr>
+         </table>
+         </br>
+         <table>
+            <td width=25>
+               <p style='text-align:left'><b><span
+                  lang=EN-US style='font-size:6.5pt'>Sr No.</span></b></p>
+            </td>
+            <td width=55>
+               <p style='text-align:left'><b><span
+                  lang=EN-US style='font-size:6.5pt'>Particulars</span></b></p>
+            </td>
+            <td >
+               <p style='text-align:right'><b><span
+                  lang=EN-US style='font-size:6.5pt'>Qty.</span></b></p>
+            </td>
+            <td >
+               <p style='text-align:right'><b><span
+                  lang=EN-US style='font-size:6.5pt'>Amount</span></b></p>
+            </td>
+            </tr>
+            {% for order_item in order_items %}
+            <tr>
+               <td><span lang=EN-US
+                  style='font-size:6.5pt'>{{ forloop.counter }}</span></p>
+               </td>
+               <td>
+                  <p><span lang=EN-US style='font-size:6.5pt'>{{order_item.get_item}}</span></p>
+               </td>
+               <td>
+                  <p style='text-align:right'><span lang=EN-US
+                     style='font-size:6.5pt'>{{order_item.get_quantity}}</span></p>
+               </td>
+               <td>
+                  <p style='text-align:right'><span lang=EN-US
+                     style='font-size:6.5pt'>{{order_item.get_subtotal_receipt}}</span></p>
+               </td>
+            </tr>
+            {% endfor %}
+            <tr>
+               <td>
+               </td>
+               <td>
+               </td>
+               <td>
+                  <p style='text-align:right'><b><span lang=EN-US
+                     style='font-size:6.5pt'>Total (Rs.)</span></b></p>
+               </td>
+               <td>
+                  <p style='text-align:right'><b><span lang=EN-US style='font-size:6.5pt'>{{total}}</span></b></p>
+               </td>
+            </tr>
+         </table>
+        <p><span lang=EN-US style='font-size:6.5pt'>Total Amount in Words:<br/><b>{{total_in_words}}</b></span></p>   
+      </div>
+      <p><span
+        lang=EN-US style='font-size:5.0pt'>Terms:<br/>1. Subject to Nashik Jurisdiction.<br/>2. E &amp; OE.<br/>3. All goods are delivered in
+        good condition &amp; are not our responsibility as soon as they leave the
+        store premises.</span>
+     </p>
+      <p style='text-align:center'><b>THANK YOU. VISIT AGAIN</b></p>
+   </body>
+</html>
